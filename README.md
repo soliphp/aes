@@ -19,6 +19,21 @@ Soli OpenSSL Aes
 
     composer require soliphp/aes
 
+## 使用
+
+    include __DIR__ . "/vendor/autoload.php";
+
+    $aes = new \Soli\Aes();
+
+    $data = "hello world.";
+    $secret = "your_secret";
+
+    $encrypted = $aes->encrypt($data, $secret);
+
+    $decrypted = $aes->decrypt($encrypted, $secret);
+
+    var_dump($decrypted);
+
 ## 加密数据
 
     $aes = new \Soli\Aes();
