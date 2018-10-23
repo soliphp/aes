@@ -8,7 +8,6 @@ Soli OpenSSL Aes
 * 兼容 OpenSSL 1.0+ 命令行
 * 查看 OpenSSL 版本 `openssl version`
 
-
 [![Build Status](https://travis-ci.org/soliphp/aes.svg?branch=master)](https://travis-ci.org/soliphp/aes)
 [![Coverage Status](https://coveralls.io/repos/github/soliphp/aes/badge.svg?branch=master)](https://coveralls.io/github/soliphp/aes?branch=master)
 [![License](https://poser.pugx.org/soliphp/aes/license)](https://packagist.org/packages/soliphp/aes)
@@ -66,8 +65,10 @@ Soli OpenSSL Aes
     The default digest was changed from MD5 to SHA256 in OpenSSL 1.1.0 The FIPS-related options were removed in OpenSSL 1.1.0
     在 OpenSSL 1.1.0 版本中，默认信息摘要算法从 MD5 更改为 SHA256
 
-当前项目目前只支持 md5 方式，所以在使用 OpenSSL 命令行加解密数据时务必显示指定 `-md md5` 参数，
+所以在使用 OpenSSL 命令行加解密数据时务必显示指定 `-md md5` 参数，
 以便在 OpenSSL 1.0 和 1.1 版本下执行命令时都可成功加解密。
+
+当前项目目前只支持 md5 方式。
 
 ## 参考
 
