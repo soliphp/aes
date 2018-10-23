@@ -1,0 +1,32 @@
+{
+    "name": "soliphp/aes",
+    "description": "OpenSSL-compatible AES (128, 192, or 256) CBC library for PHP, based on openssl.",
+    "type": "library",
+    "keywords": ["aes", "soliphp", "openssl", "aes-256-cbc", "aes-192-cbc", "aes-128-cbc"],
+    "homepage": "https://github.com/soliphp/aes",
+    "support": {
+        "issues": "https://github.com/soliphp/aes/issues",
+        "source": "https://github.com/soliphp/aes"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ueaner",
+            "email": "ueaner@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Soli\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Soli\\Tests\\": "tests/"
+        }
+    }
+}
