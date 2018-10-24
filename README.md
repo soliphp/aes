@@ -21,12 +21,12 @@ Soli OpenSSL Aes
 
 ## 使用
 
-    include __DIR__ . "/vendor/autoload.php";
+    include __DIR__ . '/vendor/autoload.php';
 
     $aes = new \Soli\Aes();
 
-    $data = "hello world.";
-    $secret = "your_secret";
+    $data = 'hello world.';
+    $secret = 'your_secret';
 
     $encrypted = $aes->encrypt($data, $secret);
 
@@ -38,13 +38,13 @@ Soli OpenSSL Aes
 
     $aes = new \Soli\Aes();
 
-    $encrypted = $aes->encrypt("hello world.", "your_secret");
+    $encrypted = $aes->encrypt('hello world.', 'your_secret');
 
 ## 解密数据
 
     $aes = new \Soli\Aes();
 
-    $decrypted = $aes->decrypt("U2FsdGVkX1/mgtCqMAn6S9AKVrqjPn8NoJkysV5JPII=", "your_secret");
+    $decrypted = $aes->decrypt('U2FsdGVkX1/mgtCqMAn6S9AKVrqjPn8NoJkysV5JPII=', 'your_secret');
 
 ## 256/192/128
 
@@ -66,12 +66,16 @@ Soli OpenSSL Aes
 
 加密数据：
 
-    $ echo -n "hello world." | openssl aes-256-cbc -md md5 -base64 -pass pass:your_secret
+    $ echo -n 'hello world.' | openssl aes-256-cbc -md md5 -base64 -pass pass:your_secret
     U2FsdGVkX1/mgtCqMAn6S9AKVrqjPn8NoJkysV5JPII=
 
 解密数据：
 
-    $ echo "U2FsdGVkX1/mgtCqMAn6S9AKVrqjPn8NoJkysV5JPII=" | openssl aes-256-cbc -md md5 -d -base64 -pass pass:your_secret
+    $ echo 'U2FsdGVkX1/mgtCqMAn6S9AKVrqjPn8NoJkysV5JPII=' | openssl aes-256-cbc -md md5 -d -base64 -pass pass:your_secret
+
+注：如果命令行下加密的数据含有特殊字符，导致无法加密，使用`单引号`包裹，如：
+
+    $ echo -n 'hello ~!@%^&*()\{}[]/?' | openssl aes-256-cbc -md md5 -base64 -pass pass:'~!@%^&*()\{}[]/?'
 
 ## md5/sha256 信息摘要算法
 
